@@ -16,7 +16,7 @@ const babyRoutes = require('./router/babyRouter');
 app.use('/api/baby', babyRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Bienvenido a mi aplicación Node.js!');
+    res.send('Nueva version!');
 });
 
 module.exports = app;

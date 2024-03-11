@@ -11,6 +11,11 @@ const babySchema = new mongoose.Schema({
         require: true,
         trim: true,
     },
+    acompaniante: {
+        type: String,
+        require: true,
+        trim: true,
+    },
     llaveAcceso: {
         type: String,
         require: true,
