@@ -1,10 +1,14 @@
 require('dotenv').config();
-require('./db/mongose')
+require('./db/mongose');
 const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+// Configuración modificada de CORS para aceptar cualquier dominio
+app.use(cors({
+  origin: '*' // Permite solicitudes de cualquier origen
+}));
+
 app.use(express.json());
 
 const babyRoutes = require('./router/babyRouter');
