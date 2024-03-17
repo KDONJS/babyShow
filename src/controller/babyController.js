@@ -19,6 +19,15 @@ exports.crearBaby = async (req, res) => {
     }
 }
 
+exports.crearBabiesColectivo = async (req, res) => {
+  try {
+      const nuevosBabies = await Baby.insertMany(req.body);
+      res.status(201).send(nuevosBabies);
+  } catch (error) {
+      res.status(400).send(error);
+  }
+};
+
 exports.loginBaby = async (req, res) => {
     const { llaveAcceso } = req.body;
     try {
@@ -31,4 +40,4 @@ exports.loginBaby = async (req, res) => {
     } catch (error) {
       res.status(500).json({ mensaje: "Error en el servidor", error });
     }
-  };
+};
